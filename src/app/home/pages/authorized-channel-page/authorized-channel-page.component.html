@@ -1,0 +1,12 @@
+<h1 class="flex align-items-center justify-content-center">Authorized Channels</h1>
+<p-divider></p-divider>
+
+<div class="grid bm-8 p-3 align-items-center justify-content-center">
+  <div *ngFor="let channel of channels" class="col-12 sm:col-4 md:col-3 xl:col:3 m-2">
+    <p-card header="{{channel.name}}">
+      <h2>Authorized Channel Code</h2>
+      <h3>{{channel.code}}</h3>
+    </p-card>
+  </div>
+</div>
+

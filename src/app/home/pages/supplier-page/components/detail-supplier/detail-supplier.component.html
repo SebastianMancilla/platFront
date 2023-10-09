@@ -1,0 +1,54 @@
+<div class="flex flex-row">
+  <div class="col-6 flex align-items-center justify-content-center">
+    <p-card header="{{supplier.name}}">
+      <p class="m-0"><span>Code: </span>{{supplier.code}}</p>
+      <h2>Supplier Contact</h2>
+      <p><span class="font-bold">Notification Email: </span> {{supplier.notificationEmail}}</p>
+      <p><span class="font-bold">Alert Email: </span> {{supplier.alertEmail}}</p>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+
+    <h1 class="flex align-items-center justify-content-center">Products</h1>
+    <p-divider></p-divider>
+    <p-table [columns]="cols" [value]="supplier.products" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th *ngFor="let col of columns">
+                  {{ col.header }}
+              </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+              <td *ngFor="let col of columns">
+                  {{ rowData[col.field] }}
+              </td>
+          </tr>
+      </ng-template>
+  </p-table>
+
+    <h1 class="flex align-items-center justify-content-center">Authorized Channels</h1>
+    <p-divider></p-divider>
+    <p-table [columns]="colsChannel" [value]="supplier.channels" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th *ngFor="let col of columns">
+                  {{ col.header }}
+              </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+              <td *ngFor="let col of columns">
+                  {{ rowData[col.field] }}
+              </td>
+          </tr>
+      </ng-template>
+  </p-table>
+
+
+  </div>
+
+</div>

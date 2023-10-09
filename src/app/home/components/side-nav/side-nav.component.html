@@ -1,0 +1,26 @@
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <p-button icon="pi pi-list" styleClass="p-button-rounded p-button-help p-button-text p-button-raised"
+      (click)="sidebarVisible = true"></p-button>
+  </div>
+  <div class="p-toolbar-group-end">
+    <p-button icon="pi pi-sign-out"
+      styleClass="p-button-rounded p-button-danger p-button-text p-button-raised"></p-button>
+  </div>
+</p-toolbar>
+
+<p-sidebar [(visible)]="sidebarVisible">
+  <ng-template pTemplate="header">
+    <h1>Menu</h1>
+  </ng-template>
+  <ng-template pTemplate="content" class="col-12">
+    <p-button label="Home" icon="pi pi-home" (click)="goHome()"
+      styleClass="p-button-warning p-button-text w-full p-button-lg"></p-button>
+    <p-button label="Suppliers" icon="pi pi-user-minus" (click)="goToSuppliers()"
+      styleClass="p-button-warning p-button-text w-full p-button-lg"></p-button>
+    <p-button label="Products" icon="pi pi-box" (click)="goToProducts()"
+      styleClass="p-button-warning p-button-text w-full p-button-lg"></p-button>
+    <p-button label="Authorized Channels" icon="pi pi-truck" (click)="goToChannels()"
+      styleClass="p-button-warning p-button-text w-full p-button-lg"></p-button>
+  </ng-template>
+</p-sidebar>
